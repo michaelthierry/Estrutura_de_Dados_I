@@ -29,4 +29,20 @@ typedef struct lista{
     Pessoa dados[MAX];
 }Lista; 
 
+/**
+ * @brief Aloca memoria para um ponteiro do tipo lista
+ * 
+ * @return Lista* 
+ */
+Lista* lista_criar();
+
+/**
+ * @brief Libera memoria alocada para uma lista
+ * 
+ * @param lista 
+ */
+void lista_deletar(Lista *lista);
+
+
+
 #endif

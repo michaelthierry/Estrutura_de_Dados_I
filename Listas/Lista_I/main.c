@@ -14,5 +14,15 @@
 
 int main(){
 
+    Lista *lista;
+    //criando a lista
+    lista = lista_criar();
+    printf("@> Lista criada\n");
+
+
+    //destruindo a lista
+    lista_deletar(lista);
+    printf("@> Lista deletada\n");
+    //fim
     return 0;
 }
