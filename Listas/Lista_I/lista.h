@@ -72,5 +72,34 @@ int lista_vazia(Lista *lista);
 
 int lista_tamanho(Lista *lista);
 
+// INSERIR NA LISTA
+
+/**
+ * @brief Insere um novo elemento na inicio da lista
+ * 
+ * @param lista ponteiro do tipo lista
+ * @param pessoa elemento do tipo Pessoa a ser inserido
+ * @return int -1 se a lista estiver cheia, 1 se for inserido
+ */
+int lista_inserir_inicio(Lista *lista, Pessoa pessoa);
+
+/**
+ * @brief Inserir um elemento de forma ordenada na lista
+ * 
+ * @param lista ponterio do tipo lista
+ * @param pessoa elemento a ser inserido
+ * @return int -1 se a lista estiver cheia, 1 se for inserido
+ */
+int lista_inserir_ordenado(Lista *lista, Pessoa pessoa);
+
+/**
+ * @brief Insere um elemento no fim da lista
+ * 
+ * @param lista ponteiro do tipo lista
+ * @param pessoa elemento a ser inserido
+ * @return int -1 se a lista estiver cheia, 1 se for inserido
+ */
+int lista_inserir_fim(Lista *lista, Pessoa pessoa);
+
 
 #endif

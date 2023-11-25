@@ -15,6 +15,7 @@
 int main(){
 
     Lista *lista; 
+    Pessoa p;
     int status;
     //criando a lista
     lista = lista_criar();
@@ -26,6 +27,19 @@ int main(){
     printf("@> Lista vazia: %i\n", status);
     status = lista_tamanho(lista);
     printf("@> Lista tamanho: %i\n", status);
+    //inserindo no inicio
+    p.id = 10;
+    status = lista_inserir_inicio(lista, p);
+    printf("@> inserido no inicio: %i\n", status);
+    //inserindo no fim
+    p.id = 30;
+    status = lista_inserir_inicio(lista, p);
+    printf("@> inserido no fim: %i\n", status);
+    //inserindo em ordem
+    p.id = 20;
+    status = lista_inserir_inicio(lista, p);
+    printf("@> inserido em ordem: %i\n", status);
+
 
     //destruindo a lista
     lista_deletar(lista);
