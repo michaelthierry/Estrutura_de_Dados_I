@@ -22,9 +22,33 @@ Lista* lista_criar(){
         lista->quantidade = 0;
     }
 
-    return 0;
+    return lista;
 }
 
 void lista_deletar(Lista *lista){
     free(lista);
+}
+
+int lista_cheia(Lista *lista){
+    if(lista == NULL){
+        return -1;
+    }
+
+    return (lista->quantidade == MAX);
+}
+
+int lista_vazia(Lista *lista){
+    if(lista == NULL){
+        return -1;
+    }
+
+    return (lista->quantidade == 0);
+}
+
+int lista_tamanho(Lista *lista){
+    if(lista == NULL){
+        return -1;
+    }
+    
+    return lista->quantidade;
 }

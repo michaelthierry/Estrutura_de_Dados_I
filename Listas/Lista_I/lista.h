@@ -29,6 +29,8 @@ typedef struct lista{
     Pessoa dados[MAX];
 }Lista; 
 
+// CRIAR E DESTRUIR A LISTA
+
 /**
  * @brief Aloca memoria para um ponteiro do tipo lista
  * 
@@ -43,6 +45,32 @@ Lista* lista_criar();
  */
 void lista_deletar(Lista *lista);
 
+// OBTER INFORMAÇOES DA LISTA
+
+/**
+ * @brief Verifica se a lista está cheia
+ * 
+ * @param lista ponterio do tipo lista
+ * @return int -1 se a lista nao existir, 1 se estiver cheia.
+ */
+int lista_cheia(Lista *lista);
+
+/**
+ * @brief Verifica se a lista esta vazia
+ * 
+ * @param lista ponteiro do tipo lista
+ * @return int  -1 se a lista nao existir, 1 se estiver vazia.
+ */
+int lista_vazia(Lista *lista);
+
+/**
+ * @brief Verifica o tamanho da lista
+ * 
+ * @param lista ponterio do tipo lista
+ * @return int -1 se a lista nao existir, tamanho da lista
+ */
+
+int lista_tamanho(Lista *lista);
 
 
 #endif

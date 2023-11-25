@@ -14,11 +14,18 @@
 
 int main(){
 
-    Lista *lista;
+    Lista *lista; 
+    int status;
     //criando a lista
     lista = lista_criar();
     printf("@> Lista criada\n");
-
+    //obtendo informações
+    status = lista_cheia(lista);
+    printf("@> Lista cheia: %i\n", status);
+    status = lista_vazia(lista);
+    printf("@> Lista vazia: %i\n", status);
+    status = lista_tamanho(lista);
+    printf("@> Lista tamanho: %i\n", status);
 
     //destruindo a lista
     lista_deletar(lista);
