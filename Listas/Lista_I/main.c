@@ -62,7 +62,7 @@ void usuario(){
             scanf("%i", &opcao);
             //Avaliando a opcao
             switch(opcao){
-                int estado, id;
+                int estado, indice, id;
                 case 0:
                     break;
                 case 1:
@@ -109,10 +109,17 @@ void usuario(){
                     printf("@> Estado: %i\n", estado);
                     break;
                 case 8:
+                    printf("@> Digite o indice:\n");
+                    scanf("%i", &indice);
+                    estado = lista_busca_posicao(lista, indice, &pessoa);
                     break;
                 case 9:
+                    printf("@> Digite o ID:\n");
+                    scanf("%i", &id);
+                    estado = lista_busca_elemento(lista, id, &pessoa);
                     break;
                 default:
+                    printf("@> Opção Invalida\n");
                     break;
             }
 

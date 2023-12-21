@@ -127,6 +127,8 @@ int lista_remover_elemento(Lista *lista, int id);
  */
 int lista_remover_fim(Lista *lista);
 
+//  EXIBIR ELEMENTOS
+
 /**
  * @brief Exibe a lista ao usuario
  * 
@@ -134,5 +136,27 @@ int lista_remover_fim(Lista *lista);
  * @return int -1 se a lista nao existir
  */
 int lista_exibir(Lista *lista);
+
+// BUSCA NA LISTA
+
+/**
+ * @brief Busca por um elemento na lista
+ * 
+ * @param lista ponteiro para a lista
+ * @param id identificador do elemento
+ * @param pessoa referencia para pessoa ser armazenada
+ * @return int 
+ */
+int lista_buscar_elemento(Lista *lista, int id, Pessoa *pessoa);
+
+/**
+ * @brief Busca por um elemento na posiçao da lista
+ * 
+ * @param lista ponteiro para lista
+ * @param posicao indice onde se deseja procurar
+ * @param pessoa referencia para retornar pessoa
+ * @return int 
+ */
+int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa);
 
 #endif

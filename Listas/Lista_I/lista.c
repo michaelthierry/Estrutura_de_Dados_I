@@ -189,3 +189,38 @@ int lista_exibir(Lista *lista){
     //Retorna 1
     return 1;
 }
+
+int lista_buscar_elemento(Lista *lista, int id, Pessoa *pessoa){
+    //Verifica se a lista existe
+    if(lista == NULL || lista_vazia(lista)){
+        return -1;
+    }
+    //Tenta encontra o elemento
+    int indice = 0;
+    while((indice < lista->quantidade) && (lista->dados[indice].id != id)){
+        indice++;
+    }
+    //verifica se econtrou
+    if(indice == lista->quantidade){
+        return -1;
+    }
+    //se encontrou
+    *pessoa = lista->dados[indice];
+    //retorna sucesso
+    return 1;
+}
+
+int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa){
+     //Verifica se a lista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Verifica se a busca é possivel
+    if(posicao <= 0 || posicao > lista->quantidade){
+        return -1;
+    }
+    //Recebe o elemento da posição diretamente
+    *pessoa = lista->dados[posicao - 1];
+    //Retorna sucesso
+    return 1;
+}
