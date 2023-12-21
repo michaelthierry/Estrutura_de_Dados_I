@@ -161,3 +161,31 @@ int lista_remover_fim(Lista *lista){
     //Retorna sucesso
     return 1;
 }
+
+int lista_exibir(Lista *lista){
+    //verifica se alista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Exibe os elementos
+    int iterador = 0;
+    printf("@> Lista\n");
+    while(iterador < lista->quantidade){
+        printf(
+            "+------------------------------------------+\n"
+            "|[%02i]|ID:[%i]              \n"            
+            "|    |Nome:%s"
+            "|    |Idade:%i\n"
+            "|    |Peso:%.2f\n"
+            "+------------------------------------------+\n",
+            iterador+1,
+            lista->dados[iterador].id,
+            lista->dados[iterador].nome,
+            lista->dados[iterador].idade,
+            lista->dados[iterador].peso
+        );
+        iterador++;
+    }
+    //Retorna 1
+    return 1;
+}

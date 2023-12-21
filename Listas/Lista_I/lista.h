@@ -102,8 +102,37 @@ int lista_inserir_ordenado(Lista *lista, Pessoa pessoa);
 int lista_inserir_fim(Lista *lista, Pessoa pessoa);
 
 //  RREMOVER DA LISTA
+/**
+ * @brief Remove um elemento do inicio da lista
+ * 
+ * @param lista ponterio do tipo lista
+ * @return int -1 se a lista estive vazia, 1 se for removido
+ */
 int lista_remover_inicio(Lista *lista);
+
+/**
+ * @brief Remove um elemento da lista pelo id
+ * 
+ * @param lista ponteiro do yipo lista
+ * @param id identificador do elemento
+ * @return int -1 se a lista estiver vazia, 1 se for encontrado e removido 
+ */
 int lista_remover_elemento(Lista *lista, int id);
+
+/**
+ * @brief Remove do fim da lista 
+ * 
+ * @param lista ponteiro do tipo lista
+ * @return int -1 se a lista não existir, 1 se for removido 
+ */
 int lista_remover_fim(Lista *lista);
+
+/**
+ * @brief Exibe a lista ao usuario
+ * 
+ * @param lista ponteiro da lista
+ * @return int -1 se a lista nao existir
+ */
+int lista_exibir(Lista *lista);
 
 #endif

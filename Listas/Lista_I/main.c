@@ -105,6 +105,8 @@ void usuario(){
                     printf("@> Estado: %i\n", estado);
                     break;
                 case 7:
+                    estado = lista_exibir(lista);
+                    printf("@> Estado: %i\n", estado);
                     break;
                 case 8:
                     break;
