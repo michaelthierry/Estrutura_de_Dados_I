@@ -29,6 +29,13 @@ typedef struct lista{
     Pessoa dados[MAX];
 }Lista; 
 
+/**
+ * @brief Pegada os dados de uma pessoa
+ * 
+ * @return Pessoa um elemento do tipo pessoa
+ */
+Pessoa pegar_dados();
+
 // CRIAR E DESTRUIR A LISTA
 
 /**

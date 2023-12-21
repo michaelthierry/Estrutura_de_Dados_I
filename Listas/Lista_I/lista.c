@@ -13,6 +13,34 @@
 #include <stdlib.h>
 #include "lista.h"
 
+Pessoa pegar_dados(){
+    Pessoa pessoa;
+    //Pegando informações
+    printf(
+        "+------------------------------------------+\n"
+        "@> Digite o ID:\n"
+    );
+    scanf("%i", &pessoa.id);
+    //Removendo o \n
+    while(getchar() != '\n');
+    printf("@> Digite o Nome:\n");
+    
+    //lendo nome pegando espaços em brancos ja que scanf nao faz.
+    fgets(pessoa.nome, sizeof(pessoa.nome), stdin);
+    
+    printf("@> Digite a idade:\n");
+    scanf("%i", &pessoa.idade);
+
+    printf("@> Digite o peso:\n");
+    scanf("%f", &pessoa.peso);
+
+    printf(
+        "+------------------------------------------+\n"
+    );
+    //retorna os dados
+    return pessoa;
+}
+
 Lista* lista_criar(){
     //declara ponteiro do tipo lista
     Lista *lista;
