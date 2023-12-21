@@ -101,5 +101,9 @@ int lista_inserir_ordenado(Lista *lista, Pessoa pessoa);
  */
 int lista_inserir_fim(Lista *lista, Pessoa pessoa);
 
+//  RREMOVER DA LISTA
+int lista_remover_inicio(Lista *lista);
+int lista_remover_elemento(Lista *lista, int id);
+int lista_remover_fim(Lista *lista);
 
 #endif

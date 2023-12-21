@@ -110,3 +110,54 @@ int lista_inserir_fim(Lista *lista, Pessoa pessoa){
     //retorna sucesso
     return 1;
 }
+
+int lista_remover_inicio(Lista *lista){
+    //Verifica se a lista esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    int indice;
+    //Move todos os elementos um posição anterior
+    for(indice = 0; indice < lista->quantidade - 1; indice++){
+        lista->dados[indice] = lista->dados[indice + 1];
+    }
+    //Decrementa a quantidade
+    lista->quantidade--;
+    //Status sucesso
+    return 1;
+}
+
+int lista_remover_elemento(Lista *lista, int id){
+    //Verifique se a lista esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    int posicao, indice = 0;
+    //Percorre a lista procurando pelo elemento
+    while((indice < lista->quantidade) && (lista->dados[indice].id != id)){
+        indice++;
+    }
+    //Verifica se encontrou
+    if(indice == lista->quantidade){
+        return -1;
+    }
+    //Move os elementos uma posiçao para a esquerda
+    for(posicao = indice; posicao < lista->quantidade - 1; posicao++){
+        lista->dados[posicao] = lista->dados[posicao + 1];
+    }
+    //Decrementa quantidade
+    lista->quantidade--;
+    //Retorna sucesso
+    return 1;
+}
+
+int lista_remover_fim(Lista *lista){
+    //Verifica se a lista esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Apenas decrementa a quantidade
+    lista->quantidade--;
+    //Retorna sucesso
+    return 1;
+}
