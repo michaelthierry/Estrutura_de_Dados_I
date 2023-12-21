@@ -15,4 +15,3 @@ __Quando utilizar__
 - Inserção e remoção são apenas no final da lista.
 - Tamanho máximo definido.
 - A busca é a operação mais frequente.
-
