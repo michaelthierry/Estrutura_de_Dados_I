@@ -110,12 +110,12 @@ void usuario(){
                 case 8:
                     printf("@> Digite o indice:\n");
                     scanf("%i", &indice);
-                    estado = lista_busca_posicao(lista, indice, &pessoa);
+                    estado = lista_buscar_posicao(lista, indice, &pessoa);
                     break;
                 case 9:
                     printf("@> Digite o ID:\n");
                     scanf("%i", &id);
-                    estado = lista_busca_elemento(lista, id, &pessoa);
+                    estado = lista_buscar_elemento(lista, id, &pessoa);
                     break;
                 default:
                     printf("@> Opção Invalida\n");
