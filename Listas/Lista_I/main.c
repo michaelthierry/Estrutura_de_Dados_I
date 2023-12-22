@@ -33,7 +33,7 @@ void usuario(){
     if(lista != NULL){
         //Mostrando informaçoes da lista
         printf(
-            "@> Lista Criada\n"
+            "@> Lista Criada \n"
             "@> Tipo: Lista Linear Estatica\n"
             "@> Tamanho Maximo: %i elementos\n", MAX
         );
