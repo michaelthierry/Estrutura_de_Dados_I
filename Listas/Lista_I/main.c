@@ -11,8 +11,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"
+// Mensagens
+#define SUCESSO "@> SUCESSO: "
+#define FALHA "@> FALHA: "
+// Codigo de Operações
+#define INSERIR 1
+#define REMOVER 2
 
 void usuario();
+void validar_operacao(int valida, int estado);
+void validar_busca(int valida, Pessoa pessoa);
 
 int main(){
     //Chama a função do usuario
@@ -69,26 +77,30 @@ void usuario(){
                     pessoa = pegar_dados();
                     //Insere na lista
                     estado = lista_inserir_inicio(lista, pessoa);
-                    printf("@> Estado: %i\n", estado);
+                    //verificar operação
+                    validar_operacao(estado, INSERIR);
                     break;
                 case 2:
                     //Pegando informações
                     pessoa = pegar_dados();
                     //Insere na lista
                     estado = lista_inserir_ordenado(lista, pessoa);
-                    printf("@> Estado: %i\n", estado); 
+                    //verificar operação
+                    validar_operacao(estado, INSERIR);
                     break;
                 case 3:
                     //Pegando informações
                     pessoa = pegar_dados();
                     //Insere na lista
                     estado = lista_inserir_fim(lista, pessoa); 
-                    printf("@> Estado: %i\n", estado);
+                    //verificar operação
+                    validar_operacao(estado, INSERIR);
                     break;
                 case 4:
                     //Remove da lista
                     estado = lista_remover_inicio(lista); 
-                    printf("@> Estado: %i\n", estado);
+                    //verificar operação
+                    validar_operacao(estado, REMOVER);
                     break;
                 case 5:
                     // Pegando o id
@@ -96,12 +108,14 @@ void usuario(){
                     scanf("%i", &id);
                     //Remove da lista
                     estado = lista_remover_elemento(lista, id); 
-                    printf("@> Estado: %i\n", estado);
+                    //verificar operação
+                    validar_operacao(estado, REMOVER);
                     break;
                 case 6:
                     //Remove da lista
                     estado = lista_remover_fim(lista); 
-                    printf("@> Estado: %i\n", estado);
+                    //verificar operação
+                    validar_operacao(estado, REMOVER);
                     break;
                 case 7:
                     estado = lista_exibir(lista);
@@ -111,11 +125,15 @@ void usuario(){
                     printf("@> Digite o indice:\n");
                     scanf("%i", &indice);
                     estado = lista_buscar_posicao(lista, indice, &pessoa);
+                    // verificar operação
+                    validar_busca(estado, pessoa);
                     break;
                 case 9:
                     printf("@> Digite o ID:\n");
                     scanf("%i", &id);
                     estado = lista_buscar_elemento(lista, id, &pessoa);
+                    // verificar operação
+                    validar_busca(estado, pessoa);
                     break;
                 default:
                     printf("@> Opção Invalida\n");
@@ -131,4 +149,35 @@ void usuario(){
     lista_deletar(lista);
     printf("@> Lista Destruida\n");
 
+}
+
+void validar_operacao(int valida, int codigo){
+    switch(codigo){
+        case 1:
+            if(valida > 0){
+                printf(SUCESSO "Ao inserir na lista\n");
+            }else{
+                printf(FALHA "Ao inserir na lista\n");
+            }
+            break;
+        case 2:
+            if(valida > 0){
+                printf(SUCESSO "ao remover da lista\n");
+            }else{
+                printf(FALHA "Ao remover da lista\n");
+            }
+            break;
+        default:
+            printf(FALHA "Código invalido\n");
+            break;
+    }
+}
+
+void validar_busca(int valida, Pessoa pessoa){
+    if(valida > 0){
+        printf(SUCESSO "Elemento encontrado\n");
+        printf("@> Elemento:\nID:[%d]\nNome:[%s]\n", pessoa.id, pessoa.nome);
+    }else{
+        printf(FALHA "Elemento nao encontrado\n");
+    }
 }
