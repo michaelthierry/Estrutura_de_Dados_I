@@ -139,3 +139,92 @@ int lista_exibir(Lista *lista){
     //retorna sucesso
     return 1;
 }
+
+int lista_inserir_inicio(Lista *lista, Pessoa pessoa){
+    //Se nao existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Cria um novo elemento
+    Elemento *novo = (Elemento*) malloc(sizeof(Elemento));
+    //Verifica se foi alocado
+    if(novo == NULL){
+        return -1;
+    }
+    //Insere o elemento
+    novo->pessoa = pessoa;
+    novo->proximo = lista->inicio;
+    lista->inicio = novo;
+    //Sucesso
+    return 1;
+}
+
+int lista_inserir_ordenado(Lista *lista, Pessoa pessoa){
+    //Se existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Cria um novo elemento
+    Elemento *novo = (Elemento*) malloc(sizeof(Elemento));
+    //verifica se alocou
+    if(novo == NULL){
+        return -1;
+    }
+    //Atribui o valor
+    novo->pessoa = pessoa;
+    //se a lista esta vazia
+    if(lista_vazia(lista)){
+        novo->proximo = lista->inicio;
+        lista->inicio = novo;
+    }else{
+        //cria auxiliares
+        Elemento *anterior, *atual;
+        atual = lista->inicio;
+        //Percorre a lista para encontra o local certo
+        while((atual != NULL) && (atual->pessoa.id < pessoa.id)){
+            anterior = atual;
+            atual = atual->proximo;
+        }
+        //Se o atual é o inicio
+        if(atual == lista->inicio){
+            novo->proximo = lista->inicio;
+            lista->inicio = novo;
+        }else{
+            novo->proximo = anterior->proximo;
+            anterior->proximo = novo;
+        }
+    }
+    //Sucesso
+    return 1;
+}
+
+int lista_inserir_fim(Lista *lista, Pessoa pessoa){
+    //Se existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Cria um novo elemento
+    Elemento *novo = (Elemento*) malloc(sizeof(Elemento));
+    //Se foi alocado
+    if(novo == NULL){
+        return -1;
+    }
+    novo->pessoa = pessoa;
+    novo->proximo = NULL;
+    //Se o inicio for nulo
+    if(lista->inicio == NULL){
+        lista->inicio = novo;
+    }else{
+        //Cria um auxiliar
+        Elemento *auxiliar;
+        auxiliar = lista->inicio;
+        //Percorre a lista ate o fim
+        while(auxiliar->proximo != NULL){
+            auxiliar = auxiliar->proximo;
+        }
+        //insere no fim
+        auxiliar->proximo = novo;
+    }
+    //Sucesso
+    return 1;
+}

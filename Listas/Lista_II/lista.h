@@ -85,4 +85,30 @@ int lista_tamanho(Lista *lista);
  */
 int lista_exibir(Lista *lista);
 
+//INSERÇÔES NA LISTA
+/**
+ * @brief Insere um elemento no incio da lista
+ * 
+ * @param lista Referencia para a lista
+ * @param pessoa Elemento a ser inserido
+ * @return int 
+ */
+int lista_inserir_inicio(Lista *lista, Pessoa pessoa);
+/**
+ * @brief Insere um elemento de forma ordenada na lista
+ * 
+ * @param lista Referencia para a lista
+ * @param pessoa elemento a ser inserido
+ * @return int 
+ */
+int lista_inserir_ordenado(Lista *lista, Pessoa pessoa);
+/**
+ * @brief Insere um elemento no fim da lista
+ * 
+ * @param lista referencia para a lista
+ * @param pessoa elemento a ser inserido
+ * @return int 
+ */
+int lista_inserir_fim(Lista *lista, Pessoa pessoa);
+
 #endif
