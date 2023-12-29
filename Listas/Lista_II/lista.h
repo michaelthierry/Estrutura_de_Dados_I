@@ -135,4 +135,24 @@ int lista_remover_elemento(Lista *lista, int id);
  */
 int lista_remover_fim(Lista *lista);
 
+//BUSCA NA LISTA
+/**
+ * @brief Busca um elemeto da lista e o atribui a referencia se existir
+ * 
+ * @param lista ponteiro para lista
+ * @param id identidicador do elemento
+ * @param pessoa referencia para atribuir o elemento
+ * @return int 
+ */
+int lista_buscar_elemento(Lista *lista, int id, Pessoa *pessoa);
+/**
+ * @brief Busca por um elemento em uma determinada posicao da lista e o atribui a referencia se existir.
+ * 
+ * @param lista referencia para a lista
+ * @param posicao posição da lista para fazer a busca
+ * @param pessoa referencia para atribuir o elemento
+ * @return int 
+ */
+int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa);
+
 #endif

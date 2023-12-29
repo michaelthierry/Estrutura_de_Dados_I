@@ -308,3 +308,55 @@ int lista_remover_fim(Lista *lista){
     //status ok
     return 1;
 }
+
+int lista_buscar_elemento(Lista *lista, int id, Pessoa *pessoa){
+    //se existir
+    if(lista == NULL){
+        return -1;
+    }
+    //Se nao estiver vazia
+    if(lista_vazia(lista)){
+        return 0;
+    }
+    //Criando um ponteiro
+    Elemento *auxiliar = lista->inicio;
+    //Procura pelo elemento
+    while((auxiliar != NULL) && (auxiliar->pessoa.id!= id)){
+        auxiliar = auxiliar->proximo;
+    }
+    //Confere se encontrou
+    if(auxiliar == NULL){
+        return 0;
+    }
+    *pessoa = auxiliar->pessoa;
+    //Status ok
+    return 1;
+}
+
+int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa){
+    //Se a lista existir
+    if(lista == NULL){
+        return -1;
+    }
+    //Se a lista não estiver vazia
+    if(lista_vazia(lista) || posicao <= 0){
+        return 0;
+    }
+    //Criar auxiliar
+    Elemento *auxiliar;
+    int indice = 1;
+    auxiliar = lista->inicio;
+    //faz a busca
+    while((auxiliar != NULL) && (indice < posicao)){
+        auxiliar = auxiliar->proximo;
+        indice++;
+    }
+    //Se não encontrou
+    if(auxiliar == NULL){
+        return 0;
+    }
+    //Se sim 
+    *pessoa = auxiliar->pessoa;
+    //Status
+    return 1;
+}
