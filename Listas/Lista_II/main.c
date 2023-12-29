@@ -1,9 +1,9 @@
 /**
  * @file main.c
  * @author Michael Thierry (michaelthierry86@gmail.com)
- * @brief Lista Linear Estática
+ * @brief 
  * @version 0.1
- * @date 2023-11-25
+ * @date 2023-12-28
  * 
  * @copyright Copyright (c) 2023
  * 
@@ -23,7 +23,7 @@ void validar_operacao(int valida, int estado);
 void validar_busca(int valida, Pessoa pessoa);
 
 int main(){
-    //Chama a função do usuario
+    //chama a função usuario
     usuario();
 
     return 0;
@@ -42,8 +42,8 @@ void usuario(){
         //Mostrando informaçoes da lista
         printf(
             "@> Lista Criada \n"
-            "@> Tipo: Lista Linear Estatica\n"
-            "@> Tamanho Maximo: %i elementos\n", MAX
+            "@> Tipo: Lista Linear Dinâmica Encadeada\n"
+            "@> Tamanho Maximo: limite de memoria\n"
         );
         //Variavel de opção
         int opcao;
@@ -119,7 +119,7 @@ void usuario(){
                     break;
                 case 7:
                     estado = lista_exibir(lista);
-                    printf("@> Estado: %i\n", estado);
+                    printf("@> Lista Exibida\n");
                     break;
                 case 8:
                     printf("@> Digite o indice:\n");
