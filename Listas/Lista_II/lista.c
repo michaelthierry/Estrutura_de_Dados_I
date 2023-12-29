@@ -72,3 +72,70 @@ void lista_deletar(Lista *lista){
         free(lista);
     }
 }
+
+int lista_vazia(Lista *lista){
+    //se nao existir
+    if(lista == NULL){
+        return -1;
+    }
+    //verifica se esta vazia
+    if(lista->inicio == NULL){
+        return 1;
+    }
+    return 0;
+}
+
+int lista_cheia(Lista *lista){
+    return 0;
+}
+
+int lista_tamanho(Lista *lista){
+    //Se nao existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Conta os elementos
+    Elemento *auxiliar;
+    auxiliar = lista->inicio;
+    int contador = 0;
+    while(auxiliar != NULL){
+        contador++;
+        auxiliar = auxiliar->proximo;
+    }
+    //Retorna a quantidade
+    return contador;
+}
+
+int lista_exibir(Lista *lista){
+    //se nao existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Cria um elemento auxiliar
+    Elemento *auxiliar;
+    auxiliar = lista->inicio;
+    printf("@> Lista\n");
+    //Percorre a lista
+    int contador = 0;
+    while(auxiliar != NULL){
+        //Exibe informações
+        printf(
+            "+------------------------------------------+\n"
+            "|[%02i]|ID:[%i]              \n"            
+            "|    |Nome:%s"
+            "|    |Idade:%i\n"
+            "|    |Peso:%.2f\n"
+            "+------------------------------------------+\n",
+            contador+1,
+            auxiliar->pessoa.id,
+            auxiliar->pessoa.nome,
+            auxiliar->pessoa.idade,
+            auxiliar->pessoa.peso
+        );
+        //atualiza auxiliar e o contador
+        auxiliar = auxiliar->proximo;
+        contador++;
+    }
+    //retorna sucesso
+    return 1;
+}

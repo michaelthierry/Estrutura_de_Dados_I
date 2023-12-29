@@ -55,5 +55,34 @@ Lista* lista_criar();
  */
 void lista_deletar(Lista *lista);
 
+//INFORMAÇÕES DA LISTA
+/**
+ * @brief Informa se a lista esta vazia
+ * 
+ * @param lista referencia da lista
+ * @return int -1 nao existe, 1 esta vazia, 0 nao esta vazia
+ */
+int lista_vazia(Lista *lista);
+/**
+ * @brief Informa se a lista esta cheia
+ * 
+ * @param lista referencia para a lista
+ * @return int sempre 0
+ */
+int lista_cheia(Lista *lista);
+/**
+ * @brief Informa quantos elemento existem na lista
+ * 
+ * @param lista referencia para a lista
+ * @return int -1 se a lista nao existir
+ */
+int lista_tamanho(Lista *lista);
+/**
+ * @brief Exibe os elementos da lista
+ * 
+ * @param lista Referecncia para a lista
+ * @return int 
+ */
+int lista_exibir(Lista *lista);
 
 #endif
