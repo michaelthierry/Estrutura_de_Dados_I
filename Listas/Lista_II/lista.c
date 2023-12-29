@@ -228,3 +228,83 @@ int lista_inserir_fim(Lista *lista, Pessoa pessoa){
     //Sucesso
     return 1;
 }
+
+int lista_remover_inicio(Lista *lista){
+    //se exitir
+    if(lista == NULL){
+        return -1;
+    }
+    //Verifica se esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Cria um elemento
+    Elemento *auxiliar;
+    //Remove do inicio
+    auxiliar = lista->inicio;
+    lista->inicio = auxiliar->proximo;
+    //Libera o auxiliar
+    free(auxiliar);
+    //sucesso
+    return 1;
+}
+
+int lista_remover_elemento(Lista *lista, int id){
+    //Se a lista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Verifica se esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Cria auxiliares
+    Elemento *anterior, *atual;
+    atual = lista->inicio;
+    //Encontra o elemento
+    while((atual != NULL) && (atual->pessoa.id != id)){
+        anterior = atual;
+        atual = atual->proximo;
+    }
+    //Verifica se encontrou
+    if(atual == NULL){
+        return 0;
+    }
+    //Remove o elemento
+    Elemento *remover;
+    remover = atual;
+    anterior->proximo = remover->proximo;
+    //libera o elemento
+    free(remover);
+    //status ok
+    return 1;
+}
+
+int lista_remover_fim(Lista *lista){
+    //Se a lista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Se a lista esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Cria auxiliares
+    Elemento *anterior, *atual;
+    atual = lista->inicio;
+    //Percorre a lista
+    while(atual->proximo != NULL){
+        anterior = atual;
+        atual = atual->proximo;
+    }
+    //Se estiver removendo o primeiro
+    if(atual == lista->inicio){
+        lista->inicio = atual->proximo;
+    }else{
+        anterior->proximo = atual->proximo;
+    }
+    //libera o atual
+    free(atual);
+    //status ok
+    return 1;
+}

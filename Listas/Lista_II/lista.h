@@ -111,4 +111,28 @@ int lista_inserir_ordenado(Lista *lista, Pessoa pessoa);
  */
 int lista_inserir_fim(Lista *lista, Pessoa pessoa);
 
+//REMOVER DA LISTA
+/**
+ * @brief Remove o primeiro elemento da lista
+ * 
+ * @param lista ponterio para a lista 
+ * @return int 
+ */
+int lista_remover_inicio(Lista *lista);
+/**
+ * @brief Procura um elemento na lista e o remove
+ * 
+ * @param lista ponteiro para a lista
+ * @param pessoa elemento a ser procurado
+ * @return int 
+ */
+int lista_remover_elemento(Lista *lista, int id);
+/**
+ * @brief Remove o ultimo elemento da lista
+ * 
+ * @param lista ponteiro para a lista
+ * @return int 
+ */
+int lista_remover_fim(Lista *lista);
+
 #endif
