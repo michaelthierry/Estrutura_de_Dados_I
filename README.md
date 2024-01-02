@@ -5,7 +5,7 @@ Neste projeto vamos criar os varios tipos de estrutura de dado, usando a liguage
 
 ## Estrutura de Compilação
 A estrutura de compilação em todas as estruturas seguirá o seguinte padrão. Os dados que seram armazenados na estrutura devem ser bem definidos, em seguida usadas pelas estruturas e pela a principal onde fica o menu.
-<img src="../Images/estrutura_de_compilacao.png"></img>
+<img src="../Estrutura_de_Dados_I/doc_images/estrutura_de_compilacao.png"></img>
 
 ### Dados
 > Estes sao definidos previamente em cada estrutura que fizermos, logo podem ser diferentes de uma estrutura para outra. São apenas para exemplificar situações do mundo real.
