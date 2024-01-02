@@ -16,3 +16,28 @@ a posiçao física seguinte do mesmo.
 - Inserção e remoção são apenas no final da lista.
 - Tamanho máximo for definido.
 - A busca é a operação mais frequente.
+
+## Operações 
+
+- ### Operações de construção
+    - Criar Lista
+    - Destruir lista
+
+- ### Operações de informações
+    - Cheia
+    - Vazia
+    - Tamanho
+    - Exibir a lista
+
+- ### Operações de Manipulação
+    - Inserir elemento no inicio
+    - Inserir elemento em ordem 
+    - Inserir elemento no fim
+
+    - Remover elemento do inicio
+    - Remover elemento por id
+    - Remover elemento do fim
+
+- ### Operações de Busca
+    - Buscar elemento por id
+    - Buscar elemento do indice
