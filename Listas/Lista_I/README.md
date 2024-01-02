@@ -1,19 +1,18 @@
 # Lista Linear Estática
-Tipo de lista onde o sucessor de um elemento ocupa 
+> Tipo de lista onde o sucessor de um elemento ocupa 
 a posiçao física seguinte do mesmo.
+<img src="../../doc_images/lista_linear_estatica.png"></img>
 
-__Vantagens__
-
+## Vantagens
 - Acesso rápido e direto aos elementos.
 - Tempo constante para acessar um elemento.
 
-__Desvantagens__
-
+## Desvantagens
 - Definição prévia do tamanho da lista.
 - Dificultade de inserir e remover um elemento entre dois outros (é nescessário fazer deslocamento).
 
-__Quando utilizar__
+## Quando utilizar 
 - Lista pequenas.
 - Inserção e remoção são apenas no final da lista.
-- Tamanho máximo definido.
+- Tamanho máximo for definido.
 - A busca é a operação mais frequente.
