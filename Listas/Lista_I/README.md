@@ -41,3 +41,10 @@ a posiçao física seguinte do mesmo.
 - ### Operações de Busca
     - Buscar elemento por id
     - Buscar elemento do indice
+
+## Dados
+Nesta lista vamos armazenar dados sobre pessoas. Para a estrutura deve armazenar, id, nome, idade e peso. Essas são as informações que armazenaremos sobre as pessoas.
+
+- ### Operações de dados
+    - Pegar informações
+    - Visualizar informações
