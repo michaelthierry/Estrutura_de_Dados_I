@@ -10,6 +10,7 @@ C_FLAGS = \
 OBJ = \
 	main.o \
 	lista.o \
+	pessoa.o \
 
 # Regra para gerar executavel
 Lista: $(OBJ)
