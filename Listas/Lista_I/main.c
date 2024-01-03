@@ -11,12 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"
-// Mensagens
-#define SUCESSO "@> SUCESSO: "
-#define FALHA "@> FALHA: "
-// Codigo de Operações
-#define INSERIR 1
-#define REMOVER 2
+#include "constantes.h"
 
 void usuario();
 void validar_operacao(int valida, int estado);

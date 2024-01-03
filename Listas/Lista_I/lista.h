@@ -2,12 +2,14 @@
  * @file lista.h
  * @author Michael Thierry (michaelthierry86@gmail.com)
  * @brief Lista Linear Estática
- * @version 0.1
+ * @version 0.2
  * @date 2023-11-25
  * 
  * @copyright Copyright (c) 2023
  * 
  */
+
+#include "pessoa.h"
 
 #ifndef LISTA_H
 #define LISTA_H
@@ -15,26 +17,11 @@
 // Tamanho maximo da lista
 #define MAX 10
 
-// Tipo de dados que a lista guarda
-typedef struct pessoa{
-    int id;
-    char nome[30];
-    int idade;
-    float peso;
-}Pessoa;
-
 // Estrutura da lista estatica
 typedef struct lista{
     int quantidade;
     Pessoa dados[MAX];
 }Lista; 
-
-/**
- * @brief Pegada os dados de uma pessoa
- * 
- * @return Pessoa um elemento do tipo pessoa
- */
-Pessoa pegar_dados();
 
 // CRIAR E DESTRUIR A LISTA
 

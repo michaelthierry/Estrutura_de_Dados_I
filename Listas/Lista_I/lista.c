@@ -2,7 +2,7 @@
  * @file lista.c
  * @author Michael Thierry (michaelthierry86@gmail.com)
  * @brief Lista Linear Estática
- * @version 0.1
+ * @version 0.2
  * @date 2023-11-25
  * 
  * @copyright Copyright (c) 2023
@@ -12,34 +12,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"
-
-Pessoa pegar_dados(){
-    Pessoa pessoa;
-    //Pegando informações
-    printf(
-        "+------------------------------------------+\n"
-        "@> Digite o ID:\n"
-    );
-    scanf("%i", &pessoa.id);
-    //Removendo o \n
-    while(getchar() != '\n');
-    printf("@> Digite o Nome:\n");
-    
-    //lendo nome pegando espaços em brancos ja que scanf nao faz.
-    fgets(pessoa.nome, sizeof(pessoa.nome), stdin);
-    
-    printf("@> Digite a idade:\n");
-    scanf("%i", &pessoa.idade);
-
-    printf("@> Digite o peso:\n");
-    scanf("%f", &pessoa.peso);
-
-    printf(
-        "+------------------------------------------+\n"
-    );
-    //retorna os dados
-    return pessoa;
-}
 
 Lista* lista_criar(){
     //declara ponteiro do tipo lista
@@ -199,19 +171,20 @@ int lista_exibir(Lista *lista){
     int iterador = 0;
     printf("@> Lista\n");
     while(iterador < lista->quantidade){
-        printf(
-            "+------------------------------------------+\n"
-            "|[%02i]|ID:[%i]              \n"            
-            "|    |Nome:%s"
-            "|    |Idade:%i\n"
-            "|    |Peso:%.2f\n"
-            "+------------------------------------------+\n",
-            iterador+1,
-            lista->dados[iterador].id,
-            lista->dados[iterador].nome,
-            lista->dados[iterador].idade,
-            lista->dados[iterador].peso
-        );
+        // printf(
+        //     "+------------------------------------------+\n"
+        //     "|[%02i]|ID:[%i]              \n"            
+        //     "|    |Nome:%s"
+        //     "|    |Idade:%i\n"
+        //     "|    |Peso:%.2f\n"
+        //     "+------------------------------------------+\n",
+        //     iterador+1,
+        //     lista->dados[iterador].id,
+        //     lista->dados[iterador].nome,
+        //     lista->dados[iterador].idade,
+        //     lista->dados[iterador].peso
+        // );
+        exibir_dados(&lista->dados[iterador]);
         iterador++;
     }
     //Retorna 1
