@@ -43,7 +43,8 @@ a posiçao física seguinte do mesmo.
     - Buscar elemento do indice
 
 ## Dados
-Nesta lista vamos armazenar dados sobre pessoas. Para a estrutura deve armazenar, id, nome, idade e peso. Essas são as informações que armazenaremos sobre as pessoas.
+>Nesta lista vamos armazenar dados sobre pessoas. O tipo pessoa deve armazenar, id, nome, idade e peso. Essas são as informações que armazenaremos sobre as pessoas.
+<img src="../../doc_images/pessoa.png"></img>
 
 - ### Operações de dados
     - Pegar informações
